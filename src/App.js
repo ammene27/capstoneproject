@@ -8,6 +8,7 @@ import About from "./screens/About/About";
 import Login from "./screens/Login/Login";
 import OrderOnline from "./screens/OrderOnline/OrderOnline";
 import Menu from "./components/Menu/Menu";
+import { fetchAPI } from "./fakeapi";
 
 function App() {
   return (

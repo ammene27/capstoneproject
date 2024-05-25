@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Nav } from "../../components/Navbar/Nav";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import "./BookingPage.css";
 import * as Yup from "yup";
+import { fetchAPI } from "../../fakeapi";
 const BookingPage = () => {
   const initialValues = {
     date: "",
@@ -11,8 +12,25 @@ const BookingPage = () => {
     occasion: "Birthday",
   };
 
+  const [dateData, setDateData] = useState([]);
   const today = new Date();
   today.setHours(0, 0, 0, 0);
+  useEffect(() => {
+    let x = fetchAPI(today);
+    setDateData(x);
+  }, []);
+
+  const renderOptions = () => {
+    console.log("dateData", dateData);
+    return dateData.map((v) => {
+      return (
+        <option key={v} value={v}>
+          {v}
+        </option>
+      );
+    });
+  };
+
   const validationSchema = Yup.object().shape({
     date: Yup.date()
       .min(today, "Selected date must be today or a future date")
@@ -50,13 +68,18 @@ const BookingPage = () => {
               Choose time
             </label>
             <Field as="select" id="time" name="time" className="form-field">
-              <option value="">Select Time</option>
+              {dateData.map((option) => (
+                <option id="time" key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+              {/* <option value="">Select Time</option>
               <option value="17:00">17:00</option>
               <option value="18:00">18:00</option>
               <option value="19:00">19:00</option>
               <option value="20:00">20:00</option>
               <option value="21:00">21:00</option>
-              <option value="22:00">22:00</option>
+              <option value="22:00">22:00</option> */}
             </Field>
             <ErrorMessage name="time" component="div" />
 

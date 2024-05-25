@@ -28,3 +28,26 @@
   border: 0px;
   background: #f4ce14;
 }
+.select-container {
+  position: relative;
+  display: inline-block;
+}
+
+.select-container select {
+  width: 100%; /* Adjust width as needed */
+  padding: 8px; /* Adjust padding as needed */
+  box-sizing: border-box;
+}
+
+.select-container select:focus {
+  outline: none;
+}
+
+.select-container::after {
+  content: "\25BC"; /* Unicode for down arrow */
+  position: absolute;
+  top: 50%;
+  right: 10px; /* Adjust right position as needed */
+  transform: translateY(-50%);
+  pointer-events: none;
+}
