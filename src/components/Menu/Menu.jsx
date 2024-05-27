@@ -15,7 +15,11 @@ const Menu = () => {
       <section>
         <article>
           <img src={greeksalad} alt="" />
-          <h4>Greek Salad</h4>
+
+          <div className="menu-name">
+            <h4>Greek Salad</h4>
+            <h6>$2</h6>
+          </div>
           <p>
             Imagine a tall glass goblet overflowing with scoops of your favorite
             ice cream flavors. Rich chocolate, swirls of strawberry, and flecks
@@ -24,7 +28,11 @@ const Menu = () => {
         </article>
         <article>
           <img src={bruchetta} alt="" />
-          <h4>Bruchetta</h4>
+          <div className="menu-name">
+            <h4>Bruchetta</h4>
+            <h6>$3.14</h6>
+          </div>
+
           <p>
             Imagine a tall glass goblet overflowing with scoops of your favorite
             ice cream flavors. Rich chocolate, swirls of strawberry, and flecks
@@ -33,7 +41,11 @@ const Menu = () => {
         </article>
         <article>
           <img src={lemondessert} alt="" />
-          <h4>Lemon Dessert</h4>
+
+          <div className="menu-name">
+            <h4>Lemon Dessert</h4>
+            <h6>$2.44</h6>
+          </div>
           <p>
             Imagine a tall glass goblet overflowing with scoops of your favorite
             ice cream flavors. Rich chocolate, swirls of strawberry, and flecks

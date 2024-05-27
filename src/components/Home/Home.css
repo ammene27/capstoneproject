@@ -47,3 +47,11 @@
   top: 20px;
   /* position: absolute; */
 }
+.nav-item {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #333333;
+}
